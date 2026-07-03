@@ -177,15 +177,15 @@ These principles are the testable criteria for any ShivanshOS interface. If a de
 ### 2.0 Approach
 
 ShivanshOS's visual foundation is **inspired by IBM Carbon Design
-System** — a token-based, role-driven, enterprise-grade design
-language originally built for AI, cloud, and IoT products at IBM,
-which makes it a strong structural fit for a system that spans
-dashboards, agent interfaces, and infrastructure tooling. ShivanshOS
-does not consume Carbon as a literal dependency; it adopts Carbon's
-**underlying logic** — scale-based grays, a single dominant
-interactive color, role-based tokens instead of hardcoded hex values,
-and a restrained, purposeful use of color — and re-expresses it as
-ShivanshOS's own token set.
+System and Perplexity AI** — combining Carbon's token-based,
+role-driven logic with Perplexity's "search-canvas" aesthetic. It
+emphasizes a calm, high-contrast reading environment (cream fields,
+dark ink rails) and a single brand "voltage" color (teal).
+
+The system adopts Carbon's **underlying logic** — scale-based grays and
+role-based tokens — while embracing Perplexity's **interaction patterns**
+— pill-shaped geometry, lowercase wordmarks, and an "engine for
+reading" rather than a "console to operate."
 
 **Token-first rule (binding for MCP consumers):** No surface, human- or
 agent-generated, should reference a raw hex value directly. Every
@@ -201,12 +201,12 @@ invented or approximated values.
 #### 2.1.1 Grayscale (`gray-10` → `gray-100`)
 
 Grayscale is the dominant palette across ShivanshOS. It carries
-structure, hierarchy, and layering — color (blue/accent) is reserved
+structure, hierarchy, and layering — color (teal/accent) is reserved
 for meaning, not decoration.
 
 | Token | Hex | Typical Role |
 |---|---|---|
-| `white` | `#ffffff` | Base light background, highest layer in light theme |
+| `white` | `#fdfbfa` | Base light background (Cream), calm reading canvas |
 | `gray-10` | `#f4f4f4` | Secondary light background, subtle containers |
 | `gray-20` | `#e0e0e0` | Borders, dividers on light backgrounds |
 | `gray-30` | `#c6c6c6` | Disabled borders, low-emphasis dividers |
@@ -216,28 +216,27 @@ for meaning, not decoration.
 | `gray-70` | `#525252` | Strong secondary text, icons |
 | `gray-80` | `#393939` | Dark UI containers, high-contrast elements |
 | `gray-90` | `#262626` | Dark theme secondary background |
-| `gray-100` | `#161616` | Dark theme base background, near-black text on light |
+| `gray-100` | `#191a1a` | Dark theme base background (Ink), high-contrast |
 | `black` | `#000000` | Reserved — avoid pure black except for true dark-mode edge cases |
 
-#### 2.1.2 Interactive Blue
+#### 2.1.2 Interactive Teal
 
-A single blue family is the primary interactive color across all of
-ShivanshOS — buttons, links, focus states, active/selected elements —
-mirroring Carbon's "one action color" discipline rather than
-introducing competing accent colors for interactivity.
+A single teal family is the primary interactive color across all of
+ShivanshOS — the "brand voltage" that signifies action and
+intelligence.
 
 | Token | Hex | Typical Role |
 |---|---|---|
-| `blue-10` | `#edf5ff` | Selected-state background, subtle highlight |
-| `blue-20` | `#d0e2ff` | Hover background on light surfaces |
-| `blue-30` | `#a6c8ff` | Disabled interactive elements (light theme) |
-| `blue-40` | `#78a9ff` | Interactive elements on dark backgrounds |
-| `blue-50` | `#4589ff` | Secondary interactive accents |
-| `blue-60` | `#0f62fe` | **Primary interactive color** — primary buttons, links, focus ring |
-| `blue-70` | `#0043ce` | Hover/active state for primary interactive elements |
-| `blue-80` | `#002d9c` | Pressed/active-deep state |
-| `blue-90` | `#001d6c` | High-contrast accents, dark-theme emphasis |
-| `blue-100` | `#001141` | Reserved for extreme-contrast or print contexts |
+| `teal-10` | `#e6f0f1` | Selected-state background, subtle highlight |
+| `teal-20` | `#cce2e4` | Hover background on light surfaces |
+| `teal-30` | `#99c5c9` | Disabled interactive elements (light theme) |
+| `teal-40` | `#66a7ad` | Interactive elements on dark backgrounds |
+| `teal-50` | `#338992` | Secondary interactive accents |
+| `teal-60` | `#016a71` | **Primary brand color** — primary buttons, links, focus ring |
+| `teal-70` | `#015459` | Hover/active state for primary interactive elements |
+| `teal-80` | `#013f43` | Pressed/active-deep state |
+| `teal-90` | `#012a2c` | High-contrast accents, dark-theme emphasis |
+| `teal-100` | `#001516` | Reserved for extreme-contrast or print contexts |
 
 #### 2.1.3 Semantic / Status Colors
 
@@ -352,6 +351,19 @@ genuinely floating elements.
 | `layer-03` | Nested container within a `layer-02` element |
 | `shadow-float` | Reserved for modals, dropdowns, and tooltips only — not for static containers |
 
+### 2.5 Geometry & Radii
+
+ShivanshOS embraces Perplexity's pill-based geometry for interactive
+elements.
+
+| Token | Value | Typical Usage |
+|---|---|---|
+| `radius-pill` | 9999px | Primary buttons, search inputs, sign-in pills |
+| `radius-lg` | 16px | Large cards, modals, main workspace containers |
+| `radius-md` | 12px | Standard cards, secondary panels |
+| `radius-sm` | 8px | Small components, dropdowns, tooltips |
+| `radius-xs` | 4px | Internal sub-elements, status dots |
+
 ---
 
 ## 3. Device Types & Contexts
@@ -402,7 +414,7 @@ A ShivanshOS surface always operates in one of four modes. The mode dictates the
 ### 4.1 Public-Facing Mode (`shivanshsethi.in`)
 Used for the CV, portfolio, and public docs.
 - **Goal:** Clarity, narrative, personal brand.
-- **Key Token:** Primary action `blue-60`, Background `white`, Headings `type-heading-05`.
+- **Key Token:** Primary action `teal-60`, Background `white`, Headings `type-heading-05`.
 - **Constraint:** Must maintain AA accessibility compliance for human readers.
 
 ### 4.2 Operational Mode (Dashboards)
@@ -414,6 +426,7 @@ Used for infrastructure monitoring (Cloudflare status, backup logs, home lab sta
 ### 4.3 Agent-Console Mode (Hermes/Conversational)
 Used for direct interaction with AI agents.
 - **Goal:** Clear distinction between agent output and human input.
+- **Interaction:** Input uses a large pill-shaped search composer (`radius-pill`).
 - **Key Token:** Agent content is flagged with `purple-60` accents or borders.
 - **Constraint:** Every agent message must include a timestamp (`type-label-01`) and a source identifier.
 
@@ -442,7 +455,7 @@ When initiating a design task, include this context:
 > "Design a conversational interaction container for an AI agent. Flag the agent's response using a `purple-60` left border. Use `spacing-04` between messages. Include a timestamp using `type-label-01` in `gray-50`. Ensure the container has a `data-agent-id` attribute for machine tracking."
 
 ### 5.3 Anti-Patterns to Avoid
-- **DO NOT** use raw hex codes (e.g., `#0070f3`). Use `$blue-60`.
+- **DO NOT** use raw hex codes (e.g., `#016a71`). Use `$teal-60`.
 - **DO NOT** use generic spacing (e.g., `margin: 10px`). Use `$spacing-04`.
 - **DO NOT** use expressive fonts or icons unless they serve a functional status role.
 - **DO NOT** use light theme for internal tools unless explicitly requested.
@@ -454,9 +467,10 @@ When initiating a design task, include this context:
 Standardized building blocks for all ShivanshOS surfaces.
 
 ### 6.1 Buttons & Interactive Elements
-- **Primary:** `blue-60` background, `white` text. Hover: `blue-70`.
+- **Style:** All primary and secondary buttons must use `radius-pill`.
+- **Primary:** `teal-60` background, `white` text. Hover: `teal-70`.
 - **Secondary:** `gray-80` background, `white` text. Hover: `gray-70`.
-- **Ghost/Tertiary:** No background, `blue-60` text. Hover: `blue-10`.
+- **Ghost/Tertiary:** No background, `teal-60` text. Hover: `teal-10`.
 - **Danger:** `red-60` background, `white` text.
 
 ### 6.2 Status Indicators
@@ -464,7 +478,7 @@ Used to communicate system health.
 - **Healthy:** `green-50` dot + "Healthy" label.
 - **Degraded:** `yellow-30` dot + "Degraded" label.
 - **Failed:** `red-60` dot + "Failed" label.
-- **In-Progress:** `blue-60` spinning indicator (reserved for state changes).
+- **In-Progress:** `teal-60` spinning indicator (reserved for state changes).
 
 ### 6.3 Data Tables (Operational Mode)
 - **Header:** `gray-80` background, `white` text, `type-heading-02`.
@@ -496,7 +510,7 @@ The ShivanshOS Design System is versioned infrastructure.
 
 ### 7.2 Versioning Policy
 - **Minor Updates (vX.Y.Z):** Non-breaking changes (e.g., adding a new component, refining a description).
-- **Major Updates (vX.0.0):** Breaking changes to tokens (e.g., changing the interactive blue family) or a complete shift in design philosophy.
+- **Major Updates (vX.0.0):** Breaking changes to tokens (e.g., changing the interactive brand family) or a complete shift in design philosophy.
 
 ### 7.3 Distribution to Agents
 - **Primary Source:** The `design.md` file in the root of the ShivanshOS configuration repository.
