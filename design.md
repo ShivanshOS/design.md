@@ -176,16 +176,17 @@ These principles are the testable criteria for any ShivanshOS interface. If a de
 
 ### 2.0 Approach
 
-ShivanshOS's visual foundation is **inspired by IBM Carbon Design
-System, Perplexity AI, and Bewusst BeWerben** — combining Carbon's
-token-based logic with a calm, search-canvas aesthetic. It
-emphasizes a warm, high-contrast reading environment (stone fields,
-dark slate rails) and a single brand "voltage" color (deep teal).
+ShivanshOS's visual foundation is **inspired by IBM Carbon, Perplexity
+AI, and the "Next Sphere" Futuristic aesthetic** — combining
+enterprise-grade token logic with a technical, high-fidelity
+intelligence layer. It emphasizes a clean, high-contrast environment
+(off-white fields, deep charcoal rails) and a vibrant "brand voltage"
+color (vibrant blue).
 
 The system adopts Carbon's **underlying logic** — scale-based grays and
-role-based tokens — while embracing modern **interaction patterns**
-— pill-shaped geometry and an "engine for reading" rather than a
-"console to operate."
+role-based tokens — while embracing **technical interaction patterns**
+— pill-shaped geometry, vibrant accents, and an "engine for discovery"
+optimized for both humans and agents.
 
 **Token-first rule (binding for MCP consumers):** No surface, human- or
 agent-generated, should reference a raw hex value directly. Every
@@ -206,7 +207,7 @@ for meaning, not decoration.
 
 | Token | Hex | Typical Role |
 |---|---|---|
-| `white` | `#ece6e3` | Base light background (Stone), calm reading canvas |
+| `white` | `#f6f6f3` | Base light background (Off-White), clean technical canvas |
 | `gray-10` | `#f4f4f4` | Secondary light background, subtle containers |
 | `gray-20` | `#e0e0e0` | Borders, dividers on light backgrounds |
 | `gray-30` | `#c6c6c6` | Disabled borders, low-emphasis dividers |
@@ -216,7 +217,7 @@ for meaning, not decoration.
 | `gray-70` | `#525252` | Strong secondary text, icons |
 | `gray-80` | `#393939` | Dark UI containers, high-contrast elements |
 | `gray-90` | `#262626` | Dark theme secondary background |
-| `gray-100` | `#1f2937` | Dark theme base background (Slate), high-contrast |
+| `gray-100` | `#181816` | Dark theme base background (Charcoal), technical black |
 | `black` | `#000000` | Reserved — avoid pure black except for true dark-mode edge cases |
 
 #### 2.1.2 Interactive Teal
@@ -232,11 +233,11 @@ intelligence.
 | `teal-30` | `#99c5c9` | Disabled interactive elements (light theme) |
 | `teal-40` | `#66a7ad` | Interactive elements on dark backgrounds |
 | `teal-50` | `#338992` | Secondary interactive accents |
-| `teal-60` | `#0d4659` | **Primary brand color** (Deep Teal) — primary buttons, links |
-| `teal-70` | `#0a3845` | Hover/active state for primary interactive elements |
-| `teal-80` | `#082b36` | Pressed/active-deep state |
-| `teal-90` | `#051e26` | High-contrast accents, dark-theme emphasis |
-| `teal-100` | `#030f16` | Reserved for extreme-contrast or print contexts |
+| `teal-60` | `#0866ff` | **Primary brand color** (Vibrant Blue) — primary buttons, links |
+| `teal-70` | `#0052e6` | Hover/active state for primary interactive elements |
+| `teal-80` | `#0040b3` | Pressed/active-deep state |
+| `teal-90` | `#002e80` | High-contrast accents, dark-theme emphasis |
+| `teal-100` | `#001c4d` | Reserved for extreme-contrast or print contexts |
 
 #### 2.1.3 Semantic / Status Colors
 
@@ -248,9 +249,9 @@ monitoring alerts) where color must reliably encode state.
 |---|---|---|---|
 | `red-60` | `#da1e28` | Error / Danger | Failed builds, auth failures, destructive actions |
 | `green-50` | `#24a148` | Success | Completed tasks, healthy service status |
-| `yellow-30` | `#f1c21b` | Warning | Degraded state, approaching limits, needs attention |
-| `blue-60` | `#0f62fe` | Informational | Neutral status, in-progress states |
-| `purple-60` | `#8a3ffc` | Agent / Automation marker | Reserved specifically to flag agent-originated actions or content, distinguishing them from human-originated ones at a glance |
+| `yellow-30` | `#fffc00` | Warning | Degraded state, approaching limits, needs attention |
+| `blue-60` | `#0866ff` | Informational | Neutral status, in-progress states |
+| `purple-60` | `#774fc4` | Agent / Automation marker | Reserved specifically to flag agent-originated actions or content, distinguishing them from human-originated ones at a glance |
 
 > **Note:** semantic hex values above follow Carbon's public v11
 > defaults as commonly documented; treat them as a strong starting
@@ -414,7 +415,7 @@ A ShivanshOS surface always operates in one of four modes. The mode dictates the
 ### 4.1 Public-Facing Mode (`shivanshsethi.in`)
 Used for the CV, portfolio, and public docs.
 - **Goal:** Clarity, narrative, personal brand.
-- **Key Token:** Primary action `teal-60`, Background `white`, Headings `type-heading-05`.
+- **Key Token:** Primary action `teal-60` (Vibrant Blue), Background `white`, Headings `type-heading-05`.
 - **Constraint:** Must maintain AA accessibility compliance for human readers.
 
 ### 4.2 Operational Mode (Dashboards)
@@ -455,7 +456,7 @@ When initiating a design task, include this context:
 > "Design a conversational interaction container for an AI agent. Flag the agent's response using a `purple-60` left border. Use `spacing-04` between messages. Include a timestamp using `type-label-01` in `gray-50`. Ensure the container has a `data-agent-id` attribute for machine tracking."
 
 ### 5.3 Anti-Patterns to Avoid
-- **DO NOT** use raw hex codes (e.g., `#0d4659`). Use `$teal-60`.
+- **DO NOT** use raw hex codes (e.g., `#0866ff`). Use `$teal-60`.
 - **DO NOT** use generic spacing (e.g., `margin: 10px`). Use `$spacing-04`.
 - **DO NOT** use expressive fonts or icons unless they serve a functional status role.
 - **DO NOT** use light theme for internal tools unless explicitly requested.
