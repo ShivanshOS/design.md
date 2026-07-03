@@ -1,0 +1,71 @@
+:root {
+  /* Colors - Grayscale */
+  --white: #fdfbfa;
+  --gray-10: #f4f4f4;
+  --gray-20: #e0e0e0;
+  --gray-30: #c6c6c6;
+  --gray-40: #a8a8a8;
+  --gray-50: #8d8d8d;
+  --gray-60: #6f6f6f;
+  --gray-70: #525252;
+  --gray-80: #393939;
+  --gray-90: #262626;
+  --gray-100: #191a1a;
+  --black: #000000;
+
+  /* Colors - Teal */
+  --teal-10: #e6f0f1;
+  --teal-20: #cce2e4;
+  --teal-30: #99c5c9;
+  --teal-40: #66a7ad;
+  --teal-50: #338992;
+  --teal-60: #016a71;
+  --teal-70: #015459;
+  --teal-80: #013f43;
+  --teal-90: #012a2c;
+  --teal-100: #001516;
+
+  /* Semantic Colors */
+  --red-60: #da1e28;
+  --green-50: #24a148;
+  --yellow-30: #f1c21b;
+  --blue-60: #0f62fe;
+  --purple-60: #8a3ffc;
+
+  /* Spacing */
+  --spacing-01: 2px;
+  --spacing-02: 4px;
+  --spacing-03: 8px;
+  --spacing-04: 12px;
+  --spacing-05: 16px;
+  --spacing-06: 24px;
+  --spacing-07: 32px;
+  --spacing-08: 40px;
+  --spacing-09: 48px;
+  --spacing-10: 64px;
+  --spacing-11: 80px;
+  --spacing-12: 96px;
+  --spacing-13: 160px;
+
+  /* Radii */
+  --radius-pill: 9999px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 4px;
+
+  /* Typography Fonts */
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-serif: 'IBM Plex Serif', serif;
+}
+
+/* Typography Scales */
+.type-heading-05 { font-family: var(--font-sans); font-size: 42px; line-height: 50px; font-weight: 600; }
+.type-heading-04 { font-family: var(--font-sans); font-size: 28px; line-height: 36px; font-weight: 600; }
+.type-heading-03 { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 600; }
+.type-heading-02 { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 600; }
+.type-body-long-01 { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 400; }
+.type-body-short-01 { font-family: var(--font-sans); font-size: 14px; line-height: 18px; font-weight: 400; }
+.type-label-01 { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; }
+.type-code-01 { font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-weight: 400; }

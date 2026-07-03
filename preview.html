@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShivanshOS Design System Preview</title>
+    <link rel="stylesheet" href="tokens.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--white);
+            color: var(--gray-100);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: var(--spacing-08);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-09);
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-05);
+        }
+
+        .section-title {
+            color: var(--gray-60);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid var(--gray-20);
+            padding-bottom: var(--spacing-03);
+            margin-bottom: var(--spacing-05);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: var(--spacing-04);
+        }
+
+        .color-swatch {
+            height: 80px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-20);
+        }
+
+        .color-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            margin-top: var(--spacing-02);
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-05);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: var(--spacing-03) var(--spacing-06);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-radius: var(--radius-pill);
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        .btn-primary { background-color: var(--teal-60); color: white; }
+        .btn-primary:hover { background-color: var(--teal-70); }
+
+        .btn-secondary { background-color: var(--gray-80); color: white; }
+        .btn-secondary:hover { background-color: var(--gray-70); }
+
+        .btn-ghost { background-color: transparent; color: var(--teal-60); border: 1px solid var(--teal-60); }
+        .btn-ghost:hover { background-color: var(--teal-10); }
+
+        .search-composer {
+            background: white;
+            border: 1px solid var(--gray-20);
+            border-radius: var(--radius-pill);
+            padding: var(--spacing-03) var(--spacing-05);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-04);
+            max-width: 600px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .search-composer input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 16px;
+            font-family: var(--font-sans);
+        }
+
+        .agent-container {
+            background-color: var(--gray-10);
+            padding: var(--spacing-06);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--purple-60);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-03);
+            max-width: 800px;
+        }
+
+        .metadata {
+            color: var(--gray-50);
+            display: flex;
+            gap: var(--spacing-04);
+        }
+
+        /* Dark Mode Section Mockup */
+        .dark-mockup {
+            background-color: var(--gray-100);
+            color: white;
+            padding: var(--spacing-08);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-06);
+        }
+
+        .dark-mockup .search-composer {
+            background-color: var(--gray-90);
+            border-color: var(--gray-80);
+            box-shadow: none;
+        }
+
+        .dark-mockup .search-composer input {
+            background: transparent;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="type-heading-05">shivanshOS</h1>
+        <p class="type-body-long-01">Design System Preview — Perplexity & Carbon Inspired</p>
+    </header>
+
+    <section>
+        <div class="section-title type-label-01">Brand Color (Teal Voltage)</div>
+        <div class="color-grid">
+            <div><div class="color-swatch" style="background-color: var(--teal-10);"></div><div class="color-label">teal-10</div></div>
+            <div><div class="color-swatch" style="background-color: var(--teal-30);"></div><div class="color-label">teal-30</div></div>
+            <div><div class="color-swatch" style="background-color: var(--teal-60);"></div><div class="color-label">teal-60</div></div>
+            <div><div class="color-swatch" style="background-color: var(--teal-80);"></div><div class="color-label">teal-80</div></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title type-label-01">Typography & Hierarchy</div>
+        <h2 class="type-heading-04">Heading Level 4</h2>
+        <h3 class="type-heading-03">Heading Level 3</h3>
+        <p class="type-body-long-01">Body long: This is the default reading style for long-form content. It prioritizes legibility and narrative flow.</p>
+        <p class="type-code-01">type-code-01: const designSystem = "shivanshOS";</p>
+    </section>
+
+    <section>
+        <div class="section-title type-label-01">Components (Pill Geometry)</div>
+        <div class="button-group">
+            <button class="btn-primary">Primary Action</button>
+            <button class="btn-secondary">Secondary</button>
+            <button class="btn-ghost">Ghost Pill</button>
+        </div>
+
+        <div class="search-composer">
+            <span>🔍</span>
+            <input type="text" placeholder="Ask anything...">
+            <button class="btn-primary" style="padding: var(--spacing-02) var(--spacing-04); font-size: 12px;">Go</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title type-label-01">Agent Response Pattern</div>
+        <div class="agent-container">
+            <div class="metadata type-label-01">
+                <span><strong>Hermes Agent</strong></span>
+                <span>•</span>
+                <span>Just now</span>
+                <span>•</span>
+                <span>Gemini 1.5 Pro</span>
+            </div>
+            <div class="type-body-short-01">
+                The ShivanshOS design language uses teal as a brand voltage. It signifies active intelligence and high-fidelity research capabilities.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title type-label-01">Operational Dark Mode</div>
+        <div class="dark-mockup">
+             <div class="search-composer">
+                <span>🔍</span>
+                <input type="text" placeholder="Ask anything...">
+            </div>
+            <div class="agent-container" style="background-color: var(--gray-90); border-color: var(--purple-60);">
+                 <div class="metadata type-label-01" style="color: var(--gray-40);">
+                    <span><strong>System Log</strong></span>
+                    <span>•</span>
+                    <span>Operational</span>
+                </div>
+                <div class="type-code-01" style="color: var(--teal-40);">
+                    [OK] Cluster nodes responding at 12ms latency.<br>
+                    [OK] Backup cycle complete.
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
